@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-centro',
@@ -7,7 +7,8 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CentroComponent implements OnInit {
 
-  centro = {nombre: "Fernando de Rojas"};
+  @Input()
+  centro: any;
 
   constructor() {
   }

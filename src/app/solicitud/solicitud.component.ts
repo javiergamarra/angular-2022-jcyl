@@ -11,6 +11,8 @@ export class SolicitudComponent implements OnInit {
 
   solicitud = {nombre: '', apellidos: ''};
 
+  centro = {nombre: "Fernando de Rojas"};
+
   constructor() {
   }
 
