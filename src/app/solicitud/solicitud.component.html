@@ -10,4 +10,8 @@
 
 <button (click)="delete()">Eliminar</button>
 
+<div *ngIf="(solicitud?.nombre?.length || 0) < 3">
+  Nombre demasiado corto
+</div>
+
 <button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
