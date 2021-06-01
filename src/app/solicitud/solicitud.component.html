@@ -1,5 +1,11 @@
 <h1>Nueva solicitud de comedor</h1>
 
+<h2>Solicitudes</h2>
+
+<div *ngFor="let solicitud of solicitudes">
+  {{solicitud.nombre}} {{solicitud.apellidos}}
+</div>
+
 <h2>Nueva solicitud</h2>
 
 <label>Nombre</label>
@@ -15,3 +21,5 @@
 </div>
 
 <button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
+
+
