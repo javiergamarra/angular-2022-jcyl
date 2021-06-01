@@ -7,12 +7,9 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SolicitudComponent implements OnInit {
 
-  solicitud = {nombre: "Javier"};
+  solicitud = {nombre: '', apellidos: ''};
 
   constructor() {
-    setInterval(() => {
-      this.solicitud.nombre = '' + Math.random();
-    }, 2000)
   }
 
   ngOnInit(): void {
@@ -20,5 +17,19 @@ export class SolicitudComponent implements OnInit {
 
   delete() {
     console.log('eliminar!')
+  }
+
+  enviar() {
+    console.log(this.solicitud)
+  }
+
+  nombre($event: KeyboardEvent) {
+    const element = $event.target as HTMLInputElement
+    this.solicitud.nombre = element.value;
+  }
+
+  apellidos($event: KeyboardEvent) {
+    const element = $event.target as HTMLInputElement
+    this.solicitud.apellidos = element.value;
   }
 }

@@ -1,5 +1,13 @@
-<p [style.color]="+solicitud.nombre > 0.5 ? 'red' : 'blue'">solicitud works!</p>
+<h1>Nueva solicitud de comedor</h1>
 
-{{solicitud.nombre}}
+<h2>Nueva solicitud</h2>
+
+<label>Nombre</label>
+<input (keyup)="nombre($event)">
+
+<label>Apellidos</label>
+<input (keyup)="apellidos($event)">
 
 <button (click)="delete()">Eliminar</button>
+
+<button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
