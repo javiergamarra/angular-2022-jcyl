@@ -11,8 +11,6 @@ export class SolicitudComponent implements OnInit {
 
   solicitud = {nombre: '', apellidos: ''};
 
-  centro = {nombre: "Fernando de Rojas"};
-
   constructor(private solicitudesService: SolicitudesService) {
     solicitudesService.getSolicitudes().then(
       x => this.solicitudes = x

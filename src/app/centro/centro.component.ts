@@ -1,16 +1,19 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-centro',
-  template: `{{centro.nombre}}`,
+  template: `{{nombreCentro}}`,
   styleUrls: ['./centro.component.css']
 })
 export class CentroComponent implements OnInit {
 
-  @Input()
-  centro: any;
+  nombreCentro: string = ''
 
-  constructor() {
+  constructor(private route: ActivatedRoute) {
+    route.params.subscribe(
+      params => this.nombreCentro = params.centroId
+    )
   }
 
   ngOnInit(): void {

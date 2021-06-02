@@ -7,6 +7,7 @@ import {CentroComponent} from "./centro/centro.component";
 const routes: Routes = [
   {path: "", component: SolicitudComponent},
   {path: "solicitudes", component: SolicitudComponent},
+  {path: "centros", component: CentrosComponent},
   {path: "centros/:centroId", component: CentroComponent}
 ];
 
