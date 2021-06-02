@@ -9,20 +9,19 @@ import { SelectorCentroComponent } from './selector-centro/selector-centro.compo
 import { FilaSolicitudComponent } from './fila-solicitud/fila-solicitud.component';
 import {HttpClientModule} from "@angular/common/http";
 import { CentrosComponent } from './centros/centros.component';
+import {SolicitudModule} from "./solicitud/solicitud.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    SolicitudComponent,
     CentroComponent,
-    SelectorCentroComponent,
-    FilaSolicitudComponent,
     CentrosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SolicitudModule
   ],
   providers: [],
   bootstrap: [AppComponent]
