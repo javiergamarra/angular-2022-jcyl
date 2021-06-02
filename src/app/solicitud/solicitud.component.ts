@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {SolicitudesService} from "../solicitudes.service";
 
 @Component({
   selector: 'app-solicitud',
@@ -6,18 +7,14 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./solicitud.component.css']
 })
 export class SolicitudComponent implements OnInit {
-
-  solicitudes = [{nombre: 'Javier', apellidos: 'Gamarra', nacimiento: new Date()}, {
-    nombre: 'Pablo',
-    apellidos: 'Agulla',
-    nacimiento: new Date(2019, 1, 1)
-  }];
+  solicitudes;
 
   solicitud = {nombre: '', apellidos: ''};
 
   centro = {nombre: "Fernando de Rojas"};
 
-  constructor() {
+  constructor(private solicitudesService: SolicitudesService) {
+    this.solicitudes = solicitudesService.getSolicitudes();
   }
 
   ngOnInit(): void {
