@@ -3,7 +3,7 @@
 <h2>Solicitudes</h2>
 
 <div *ngFor="let solicitud of solicitudes">
-  {{solicitud.nombre}} {{solicitud.apellidos}}
+  {{solicitud.nombre}} {{solicitud.apellidos}} {{solicitud.nacimiento | date: 'dd/MM/yyyy'}}
 </div>
 
 <h2>Centro</h2>
