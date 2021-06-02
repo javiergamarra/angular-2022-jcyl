@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {CentrosService} from "../centros.service";
 
 @Component({
   selector: 'app-selector-centro',
@@ -15,10 +16,11 @@ import {Component, OnInit} from '@angular/core';
 export class SelectorCentroComponent implements OnInit {
 
   centroSeleccionado= {nombre: ''};
-  centros = [{nombre: "Fernando de Rojas"}, {nombre: "Agustinas"}];
+  centros;
   centrosFiltrados: any = [];
 
-  constructor() {
+  constructor(private centrosService: CentrosService) {
+    this.centros = centrosService.getCentros();
   }
 
   ngOnInit(): void {
