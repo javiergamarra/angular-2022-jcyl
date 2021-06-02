@@ -40,4 +40,8 @@ export class SolicitudComponent implements OnInit {
     const element = $event.target as HTMLInputElement
     this.solicitud.apellidos = element.value;
   }
+
+  borrarSolicitud(solicitud: any) {
+    this.solicitudes = this.solicitudes.filter(solicitudExistente => solicitudExistente.nombre != solicitud.nombre)
+  }
 }
