@@ -24,6 +24,8 @@
   Nombre demasiado corto
 </div>
 
+<app-datos-bancarios></app-datos-bancarios>
+
 <button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
 
 
