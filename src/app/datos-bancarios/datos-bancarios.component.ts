@@ -7,15 +7,15 @@ import {NgForm} from "@angular/forms";
     <h2>Datos bancarios</h2>
     <form #f="ngForm" (ngSubmit)="submit(f)">
       <label>Entidad</label>
-      <input name="entidad" ngModel>
+      <input name="entidad" ngModel minlength="4" maxlength="4" size="4" required>
       <label>Sucursal</label>
-      <input name="sucursal" ngModel>
+      <input name="sucursal" ngModel minlength="4" maxlength="4" size="4" required>
       <label>DC</label>
-      <input name="dc" ngModel>
+      <input name="dc" ngModel minlength="2" maxlength="2" size="2" required>
       <label>Cuenta</label>
-      <input name="cuenta" ngModel>
+      <input name="cuenta" ngModel minlength="10" maxlength="10" size="10" required>
 
-      <button>Añadir</button>
+      <button [disabled]="f.invalid">Añadir</button>
     </form>
 
   `,
@@ -30,6 +30,8 @@ export class DatosBancariosComponent implements OnInit {
   }
 
   submit(f: NgForm) {
-    console.log(f)
+    if (f.controls.dc.errors) {
+      console.log(f.controls.dc.errors);
+    }
   }
 }
