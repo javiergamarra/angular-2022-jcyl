@@ -9,6 +9,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatNativeDateModule} from "@angular/material/core";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [FilaSolicitudComponent, SelectorCentroComponent, SolicitudComponent, DatosBancariosComponent],
@@ -16,7 +17,10 @@ import {MatNativeDateModule} from "@angular/material/core";
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule
+    MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule, RouterModule.forChild([
+        {path: '', component: SolicitudComponent}
+      ]
+    )
   ],
   exports: [SolicitudComponent]
 })
