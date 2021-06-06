@@ -13,19 +13,18 @@
 <h2>Nueva solicitud</h2>
 
 <label>Nombre</label>
-<input (keyup)="nombre($event)">
+<input [(ngModel)]="solicitud.nombre">
 
 <label>Apellidos</label>
-<input (keyup)="apellidos($event)">
-
-<button (click)="delete()">Eliminar</button>
+<input [(ngModel)]="solicitud.apellidos">
 
 <div *ngIf="(solicitud?.nombre?.length || 0) < 3">
   Nombre demasiado corto
 </div>
 
+<button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
+
 <app-datos-bancarios></app-datos-bancarios>
 
-<button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
 
 
