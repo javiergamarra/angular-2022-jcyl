@@ -16,11 +16,15 @@ describe('FilaSolicitudComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FilaSolicitudComponent);
     component = fixture.componentInstance;
-    component.solicitud = {}
+    component.solicitud = {nombre: 'pepe'}
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render a list', () => {
+    expect(fixture.nativeElement.textContent).toContain('pepe');
   });
 });

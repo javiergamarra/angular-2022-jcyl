@@ -22,6 +22,10 @@
   Nombre demasiado corto
 </div>
 
+<div *ngIf="(solicitud?.apellidos?.length || 0) < 3">
+  Apellidos demasiados cortos
+</div>
+
 <mat-form-field>
   <input matInput [matDatepicker]="picker" placeholder="date" (dateInput)="log($event)">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
