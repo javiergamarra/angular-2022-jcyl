@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {CentroComponent} from './centro/centro.component';
 import {HttpClientModule} from "@angular/common/http";
 import {CentrosComponent} from './centros/centros.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
