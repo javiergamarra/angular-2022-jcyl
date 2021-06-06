@@ -1,21 +1,21 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForm} from "@angular/forms";
+import {FormBuilder, FormGroup, NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-datos-bancarios',
   template: `
     <h2>Datos bancarios</h2>
-    <form #f="ngForm" (ngSubmit)="submit(f)">
+    <form [formGroup]="f">
       <label>Entidad</label>
-      <input name="entidad" ngModel minlength="4" maxlength="4" size="4" required>
+      <input name="entidad" minlength="4" maxlength="4" size="4" required formControlName="entidad">
       <label>Sucursal</label>
-      <input name="sucursal" ngModel minlength="4" maxlength="4" size="4" required>
+      <input name="sucursal" minlength="4" maxlength="4" size="4" required formControlName="sucursal">
       <label>DC</label>
-      <input name="dc" ngModel minlength="2" maxlength="2" size="2" required>
+      <input name="dc" minlength="2" maxlength="2" size="2" required formControlName="dc">
       <label>Cuenta</label>
-      <input name="cuenta" ngModel minlength="10" maxlength="10" size="10" required>
+      <input name="cuenta" minlength="10" maxlength="10" size="10" required formControlName="cuenta">
 
-      <button [disabled]="f.invalid">Añadir</button>
+      <button [disabled]="f.invalid" (click)="submit()">Añadir</button>
     </form>
 
   `,
@@ -23,15 +23,24 @@ import {NgForm} from "@angular/forms";
 })
 export class DatosBancariosComponent implements OnInit {
 
-  constructor() {
+  f: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.f = formBuilder.group({
+      entidad: '',
+      sucursal: '',
+      dc: '',
+      cuenta: '',
+    });
   }
 
   ngOnInit(): void {
   }
 
-  submit(f: NgForm) {
-    if (f.controls.dc.errors) {
-      console.log(f.controls.dc.errors);
+  submit() {
+    console.log(this.f)
+    if (this.f.controls.dc.errors) {
+      console.log(this.f.controls.dc.errors);
     }
   }
 }
