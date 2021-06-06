@@ -16,6 +16,7 @@ describe('FilaSolicitudComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FilaSolicitudComponent);
     component = fixture.componentInstance;
+    component.solicitud = {}
     fixture.detectChanges();
   });
 

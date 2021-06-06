@@ -7,6 +7,7 @@ import {CentroComponent} from './centro/centro.component';
 import {HttpClientModule} from "@angular/common/http";
 import {CentrosComponent} from './centros/centros.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -15,10 +16,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     CentrosComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BrowserModule,
+    SharedModule
   ],
   providers: [],
   exports: [],

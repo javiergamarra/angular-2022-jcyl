@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SolicitudComponent } from './solicitud.component';
+import {SharedModule} from "../shared/shared.module";
+import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 describe('SolicitudComponent', () => {
   let component: SolicitudComponent;
@@ -8,7 +10,8 @@ describe('SolicitudComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SolicitudComponent ]
+      declarations: [ SolicitudComponent ],
+      imports: [SharedModule, NoopAnimationsModule]
     })
     .compileComponents();
   });

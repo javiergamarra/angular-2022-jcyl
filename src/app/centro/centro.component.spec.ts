@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CentroComponent } from './centro.component';
+import {SharedModule} from "../shared/shared.module";
+import {RouterModule} from "@angular/router";
 
 describe('CentroComponent', () => {
   let component: CentroComponent;
@@ -8,7 +10,8 @@ describe('CentroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CentroComponent ]
+      declarations: [ CentroComponent ],
+      imports: [SharedModule, RouterModule.forRoot([])]
     })
     .compileComponents();
   });
