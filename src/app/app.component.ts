@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AuthService} from "./auth.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'solicitud';
+
+  constructor(private authService: AuthService) {
+  }
+
+  login() {
+    this.authService.login('javier');
+  }
+
+  logout() {
+    this.authService.login('')
+  }
 }

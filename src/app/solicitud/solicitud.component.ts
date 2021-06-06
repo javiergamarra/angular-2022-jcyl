@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {SolicitudesService} from "../solicitudes.service";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
+import {AuthService, Usuario} from "../auth.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-solicitud',
@@ -11,9 +13,11 @@ export class SolicitudComponent implements OnInit {
   solicitudes$: any;
 
   solicitud = {nombre: '', apellidos: ''};
+  usuario$: Observable<Usuario>;
 
-  constructor(private solicitudesService: SolicitudesService) {
+  constructor(private solicitudesService: SolicitudesService, private authService: AuthService) {
     this.solicitudes$ = solicitudesService.getSolicitudes()
+    this.usuario$ = this.authService.currentUser.asObservable();
   }
 
   ngOnInit(): void {
