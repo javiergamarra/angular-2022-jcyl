@@ -8,6 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {CentrosComponent} from './centros/centros.component';
 import {SolicitudModule} from "./solicitud/solicitud.module";
 import {DatosBancariosComponent} from './datos-bancarios/datos-bancarios.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {DatosBancariosComponent} from './datos-bancarios/datos-bancarios.compone
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SolicitudModule
+    SolicitudModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   exports: [],

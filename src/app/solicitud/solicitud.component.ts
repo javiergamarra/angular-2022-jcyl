@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SolicitudesService} from "../solicitudes.service";
+import {$e} from "@angular/compiler/src/chars";
+import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 
 @Component({
   selector: 'app-solicitud',
@@ -24,5 +26,9 @@ export class SolicitudComponent implements OnInit {
 
   borrarSolicitud(solicitud: any) {
     // this.solicitudes.filter((solicitudExistente: any) => solicitudExistente.nombre != solicitud.nombre)
+  }
+
+  log($event: MatDatepickerInputEvent<unknown, unknown>) {
+    console.log($event)
   }
 }

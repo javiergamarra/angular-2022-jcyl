@@ -22,6 +22,13 @@
   Nombre demasiado corto
 </div>
 
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="date" (dateInput)="log($event)">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+
 <button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
 
 <app-datos-bancarios></app-datos-bancarios>
