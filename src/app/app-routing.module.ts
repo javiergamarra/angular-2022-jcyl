@@ -12,7 +12,8 @@ const routes: Routes = [
     canActivate: [AutenticationGuard]
   },
   {path: "centros", component: CentrosComponent},
-  {path: "centros/:centroId", component: CentroComponent}
+  {path: "centros/:centroId", component: CentroComponent},
+  {path: '**', component: CentrosComponent}
 ];
 
 @NgModule({
