@@ -24,14 +24,17 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 export class DatosBancariosComponent implements OnInit {
 
   f: FormGroup;
+  private entidad = new FormControl('', [Validators.required, this.myValidator]);
 
   constructor(private formBuilder: FormBuilder) {
     this.f = formBuilder.group({
-      entidad: ['', [Validators.required, this.myValidator]],
+      entidad: this.entidad,
       sucursal: '',
       dc: '',
       cuenta: '',
     });
+
+    this.entidad.valueChanges.subscribe(x => console.log(x));
   }
 
   ngOnInit(): void {
