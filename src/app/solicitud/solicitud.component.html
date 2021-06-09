@@ -20,6 +20,9 @@ Usuario logueado: {{(usuario$ | async)?.name}}
 <label>Apellidos</label>
 <input [(ngModel)]="solicitud.apellidos">
 
+<label>DNI</label>
+<input appDNI [(ngModel)]="solicitud.dni">
+
 <div *ngIf="(solicitud?.nombre?.length || 0) < 3">
   Nombre demasiado corto
 </div>

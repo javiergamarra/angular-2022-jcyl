@@ -12,7 +12,7 @@ import {Observable} from "rxjs";
 export class SolicitudComponent {
   solicitudes$: any;
 
-  solicitud = {nombre: '', apellidos: ''};
+  solicitud = {nombre: '', apellidos: '', dni: ''};
   usuario$: Observable<Usuario>;
 
   constructor(private solicitudesService: SolicitudesService, private authService: AuthService) {

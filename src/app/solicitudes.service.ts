@@ -14,9 +14,10 @@ export class SolicitudesService {
   }
 
   getSolicitudes() {
-    return this.httpClient.get(CONTENTFUL_URL)
-      .toPromise()
-      .then((x: any) => x.items.map((y: any) => y.fields)
-      )
+    // return this.httpClient.get(CONTENTFUL_URL)
+    //   .toPromise()
+    //   .then((x: any) => x.items.map((y: any) => y.fields)
+    //   )
+    return new Promise(resolve => resolve(''));
   }
 }

@@ -6,14 +6,16 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatNativeDateModule} from "@angular/material/core";
 import {HttpClientModule} from "@angular/common/http";
+import {DNIDirective} from "../dni.directive";
 
 @NgModule({
-  declarations: [],
+  declarations: [DNIDirective],
   imports: [
     CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule,
     MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule,
   ],
   exports: [
+    DNIDirective,
     CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule,
     MatDatepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule,]
 })

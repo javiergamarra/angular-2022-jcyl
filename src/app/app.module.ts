@@ -14,6 +14,7 @@ import {environment} from "../environments/environment";
 import {AngularFireModule} from "@angular/fire";
 import { ConcesionariasComponent } from './concesionarias/concesionarias.component';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { DNIDirective } from './dni.directive';
 
 @NgModule({
   declarations: [
