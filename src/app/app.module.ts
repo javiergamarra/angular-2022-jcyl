@@ -13,6 +13,7 @@ import {AngularFirestoreModule} from "@angular/fire/firestore";
 import {environment} from "../environments/environment";
 import {AngularFireModule} from "@angular/fire";
 import { ConcesionariasComponent } from './concesionarias/concesionarias.component';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ConcesionariasComponent } from './concesionarias/concesionarias.compone
     BrowserModule,
     SharedModule,
     AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule,
-    StoreModule.forRoot({user: userReducer})
+    StoreModule.forRoot({user: userReducer}),
+    ButtonsModule.forRoot()
   ],
   providers: [],
   exports: [],

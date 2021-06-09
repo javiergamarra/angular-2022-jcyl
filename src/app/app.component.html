@@ -1,9 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+      <a routerLink="/centros">Centros</a>
+      <a routerLink="/solicitudes">Solicitudes</a>
+      <a routerLink="/concesionarias">Concesionarias</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary" (click)="login2()">Login</button>
+      <button type="button" class="btn btn-primary" (click)="logout()">Logout</button>
+      <button type="button" class="btn btn-primary" (click)="log()">Log</button>
+    </div>
+  </div>
+</div>
 
-<a routerLink="/centros">Centros</a>
-<a routerLink="/solicitudes">Solicitudes</a>
-<a routerLink="/concesionarias">Concesionarias</a>
-<button (click)="login2()">Login</button>
-<button (click)="logout()">Logout</button>
-<button (click)="log()">Log</button>
 
 <router-outlet></router-outlet>
