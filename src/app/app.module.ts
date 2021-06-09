@@ -9,18 +9,24 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedModule} from "./shared/shared.module";
 import {StoreModule} from "@ngrx/store";
 import {userReducer} from "../login-action";
+import {AngularFirestoreModule} from "@angular/fire/firestore";
+import {environment} from "../environments/environment";
+import {AngularFireModule} from "@angular/fire";
+import { ConcesionariasComponent } from './concesionarias/concesionarias.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CentroComponent,
     CentrosComponent,
+    ConcesionariasComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
     SharedModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule,
     StoreModule.forRoot({user: userReducer})
   ],
   providers: [],
