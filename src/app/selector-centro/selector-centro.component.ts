@@ -13,7 +13,7 @@ import {CentrosService} from "../centros.service";
   `,
   styleUrls: ['./selector-centro.component.css']
 })
-export class SelectorCentroComponent implements OnInit {
+export class SelectorCentroComponent {
 
   centroSeleccionado= {nombre: ''};
   centros;
@@ -21,9 +21,6 @@ export class SelectorCentroComponent implements OnInit {
 
   constructor(private centrosService: CentrosService) {
     this.centros = centrosService.getCentros();
-  }
-
-  ngOnInit(): void {
   }
 
   centro($event: any) {

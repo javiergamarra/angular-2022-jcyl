@@ -8,7 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   `,
   styleUrls: ['./fila-solicitud.component.css']
 })
-export class FilaSolicitudComponent implements OnInit {
+export class FilaSolicitudComponent {
 
   @Input()
   solicitud: any;
@@ -17,9 +17,6 @@ export class FilaSolicitudComponent implements OnInit {
   solicitudBorrada = new EventEmitter();
 
   constructor() {
-  }
-
-  ngOnInit(): void {
   }
 
   borrar(solicitud: any) {

@@ -11,7 +11,7 @@ import {tap} from "rxjs/operators";
   `,
   styleUrls: ['./concesionarias.component.css']
 })
-export class ConcesionariasComponent implements OnInit {
+export class ConcesionariasComponent {
 
   collection;
   concesionarias: any;
@@ -22,9 +22,6 @@ export class ConcesionariasComponent implements OnInit {
       .valueChanges({idField: 'id'})
       .pipe(tap(x => console.log(x)))
       .subscribe(x => (this.concesionarias = x));
-  }
-
-  ngOnInit(): void {
   }
 
 }

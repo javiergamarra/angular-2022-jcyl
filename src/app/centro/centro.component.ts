@@ -6,7 +6,7 @@ import {ActivatedRoute} from "@angular/router";
   template: `{{nombreCentro}}`,
   styleUrls: ['./centro.component.css']
 })
-export class CentroComponent implements OnInit {
+export class CentroComponent {
 
   nombreCentro: string = ''
 
@@ -14,9 +14,6 @@ export class CentroComponent implements OnInit {
     route.params.subscribe(
       params => this.nombreCentro = params.centroId
     )
-  }
-
-  ngOnInit(): void {
   }
 
 }

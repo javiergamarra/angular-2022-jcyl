@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
   templateUrl: './solicitud.component.html',
   styleUrls: ['./solicitud.component.css']
 })
-export class SolicitudComponent implements OnInit {
+export class SolicitudComponent {
   solicitudes$: any;
 
   solicitud = {nombre: '', apellidos: ''};
@@ -18,9 +18,6 @@ export class SolicitudComponent implements OnInit {
   constructor(private solicitudesService: SolicitudesService, private authService: AuthService) {
     this.solicitudes$ = solicitudesService.getSolicitudes()
     this.usuario$ = this.authService.currentUser.asObservable();
-  }
-
-  ngOnInit(): void {
   }
 
   enviar() {

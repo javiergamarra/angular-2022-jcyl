@@ -12,14 +12,11 @@ import {Router} from "@angular/router";
   `,
   styleUrls: ['./centros.component.css']
 })
-export class CentrosComponent implements OnInit {
+export class CentrosComponent {
   centros;
 
   constructor(private centrosService: CentrosService, private router: Router) {
     this.centros = centrosService.getCentros();
-  }
-
-  ngOnInit(): void {
   }
 
   visitarCentro(nombre: any) {

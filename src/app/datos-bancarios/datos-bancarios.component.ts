@@ -21,7 +21,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
   `,
   styleUrls: ['./datos-bancarios.component.css']
 })
-export class DatosBancariosComponent implements OnInit {
+export class DatosBancariosComponent {
 
   f: FormGroup;
   private entidad = new FormControl('', [Validators.required, this.myValidator]);
@@ -35,9 +35,6 @@ export class DatosBancariosComponent implements OnInit {
     });
 
     this.entidad.valueChanges.subscribe(x => console.log(x));
-  }
-
-  ngOnInit(): void {
   }
 
   submit() {
