@@ -8,6 +8,10 @@ import {take} from "rxjs/operators";
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  styles: [`
+  :host {
+    margin: 20px;
+  }`],
   encapsulation: ViewEncapsulation.Emulated,
   // encapsulation: ViewEncapsulation.None
 })
