@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {AuthService, Usuario} from "./auth.service";
 import {Store} from "@ngrx/store";
 import {LoginAction} from "../login-action";
@@ -7,7 +7,9 @@ import {take} from "rxjs/operators";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.Emulated,
+  // encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   title = 'solicitud';
