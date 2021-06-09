@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
-import {AuthService} from "./auth.service";
+import {AuthService, Usuario} from "./auth.service";
+import {Store} from "@ngrx/store";
+import {LoginAction} from "../login-action";
+import {take} from "rxjs/operators";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +12,15 @@ import {AuthService} from "./auth.service";
 export class AppComponent {
   title = 'solicitud';
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private store: Store<Usuario>) {
+  }
+
+  login2() {
+    this.store.dispatch(new LoginAction({name: "hi!"}));
+  }
+
+  log() {
+    this.store.pipe(take(1)).subscribe(x => console.log(x));
   }
 
   login() {
