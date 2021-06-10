@@ -5,7 +5,9 @@ Usuario logueado: {{(usuario$ | async)?.name}}
 <h2>Solicitudes</h2>
 
 <div *ngFor="let solicitud of solicitudes$ | async">
-  <app-fila-solicitud [solicitud]="solicitud" (solicitudBorrada)="borrarSolicitud(solicitud)"></app-fila-solicitud>
+  <app-fila-solicitud [solicitud]="solicitud" (solicitudBorrada)="borrarSolicitud(solicitud)">
+    -
+  </app-fila-solicitud>
 </div>
 
 <h2>Centro</h2>
