@@ -1,8 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ComponentFactoryResolver, ViewChild, ViewContainerRef} from '@angular/core';
 import {SolicitudesService} from "../solicitudes.service";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {AuthService, Usuario} from "../auth.service";
 import {Observable} from "rxjs";
+import {CentroComponent} from "../centro/centro.component";
+import {CentrosComponent} from "../centros/centros.component";
 
 @Component({
   selector: 'app-solicitud',
@@ -15,12 +17,17 @@ export class SolicitudComponent {
   solicitud = {nombre: '', apellidos: '', dni: ''};
   usuario$: Observable<Usuario>;
 
-  constructor(private solicitudesService: SolicitudesService, private authService: AuthService) {
+  @ViewChild('elemento', {read: ViewContainerRef})
+  elemento: ViewContainerRef | null = null;
+
+  constructor(private solicitudesService: SolicitudesService, private authService: AuthService, private resolver: ComponentFactoryResolver) {
     this.solicitudes$ = solicitudesService.getSolicitudes()
     this.usuario$ = this.authService.currentUser.asObservable();
   }
 
   enviar() {
+    console.log(this.elemento)
+    this.elemento!.createComponent(this.resolver.resolveComponentFactory(CentrosComponent));
     console.log(this.solicitud)
   }
 

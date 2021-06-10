@@ -39,10 +39,9 @@ Usuario logueado: {{(usuario$ | async)?.name}}
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 
-
 <button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
 
 <app-datos-bancarios></app-datos-bancarios>
 
-
+<ng-template #elemento></ng-template>
 
