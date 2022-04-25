@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {AngularFirestore} from "@angular/fire/firestore";
-import {tap} from "rxjs/operators";
+import {Component} from '@angular/core';
+import {collection, collectionData, Firestore} from "@angular/fire/firestore";
 
 @Component({
   selector: 'app-concesionarias',
@@ -16,12 +15,9 @@ export class ConcesionariasComponent {
   collection;
   concesionarias: any;
 
-  constructor(private af: AngularFirestore) {
-    this.collection = af.collection<any>('concesionarias');
-    this.collection
-      .valueChanges({idField: 'id'})
-      .pipe(tap(x => console.log(x)))
-      .subscribe(x => (this.concesionarias = x));
+  constructor(private firestore: Firestore) {
+    this.collection = collection(firestore, 'concesionarias');
+    this.concesionarias = collectionData(this.collection)
   }
 
 }

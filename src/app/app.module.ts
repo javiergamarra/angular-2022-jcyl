@@ -9,12 +9,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedModule} from "./shared/shared.module";
 import {StoreModule} from "@ngrx/store";
 import {userReducer} from "../login-action";
-import {AngularFirestoreModule} from "@angular/fire/firestore";
+import {FirestoreModule} from "@angular/fire/firestore";
+import {ConcesionariasComponent} from './concesionarias/concesionarias.component';
+import {ButtonsModule} from 'ngx-bootstrap/buttons';
+import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {environment} from "../environments/environment";
-import {AngularFireModule} from "@angular/fire";
-import { ConcesionariasComponent } from './concesionarias/concesionarias.component';
-import { ButtonsModule } from 'ngx-bootstrap/buttons';
-import { DNIDirective } from './dni.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,8 @@ import { DNIDirective } from './dni.directive';
     BrowserAnimationsModule,
     BrowserModule,
     SharedModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    FirestoreModule,
     StoreModule.forRoot({user: userReducer}),
     ButtonsModule.forRoot()
   ],
